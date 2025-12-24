@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Accounts — CapitalOne</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/loader.css">
+</head>
+<body>
+  <div class="loader-container" id="globalLoader"><div class="loader"></div></div>
+<img src="../medias/image/Capital_One_logo.svg.png" class="avatar" alt="svg.png">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <nav class="nav">
+        <a href="./dashboard.html" class="nav-item active">Home</a>
+        <a href="./accounts.html" class="nav-item">Accounts</a>
+        <a href="./transaction.html" class="nav-item">Transactions</a>
+        <a href="./transfer.html" class="nav-item">Transfer</a>
+        <a href="./zelle.html" class="nav-item">Zelle</a>
+        <a href="./pay-bills.html" class="nav-item">Pay bills</a>
+        <a href="./deposit.html" class="nav-item">Deposit check</a>
+        <a href="./notification.html" class="nav-item">Notifications</a>
+        <a href="./setting.html" class="nav-item">Settings</a>
+        <a href="./help.html" class="nav-item">Support</a>
+        <button class="logout-btn" onclick="signOutUser()">Logout</button>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <h1 class="page-title">Accounts</h1>
+      </header>
+
+      <section class="container content">
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Checking</h3>
+            <div class="account-balance">$691,103.22</div>
+            <div class="acct-meta">Account •••• 1274</div>
+            <div class="card-actions">
+              <a href="./transfer.html" class="btn btn-ghost">Transfer</a>
+              <a href="./transaction.html" class="btn btn-outline">View activity</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Savings</h3>
+            <div class="account-balance">$301,184.20</div>
+            <div class="acct-meta">Account •••• 9876</div>
+            <div class="card-actions">
+              <a href="./transfer.html" class="btn btn-ghost">Move money</a>
+              <a href="./transaction.html" class="btn btn-outline">View activity</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mt">
+          <h3>Linked accounts</h3>
+          <p class="muted">Link your external bank accounts. <a href="add-bank.html">Add bank account</a></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+<script src="../js/loader.js"></script>
+<script>
+  function signOutUser(){
+    firebase.auth().signOut().then(()=>{
+        window.location.href = "index.html";
+    });
+}
+</script>
+</body>
+</html>

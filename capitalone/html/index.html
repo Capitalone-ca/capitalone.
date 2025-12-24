@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CapitalOneBank</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/loader.css">
+</head>
+<style>
+    <style>
+  /* Prevent horizontal scroll on all screens */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Header responsive fix */
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;       /* allow wrapping on small screens */
+    gap: 12px;
+  }
+
+  .creditline {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;       /* break into multiple lines if needed */
+  }
+
+  .creditline a {
+    white-space: nowrap;   /* keep links readable */
+  }
+
+  .header-nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  /* Hero container fix */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;        /* stack items on small screens */
+    gap: 20px;
+  }
+
+  .hero-text, .hero-panel {
+    flex: 1 1 320px;        /* allows both cards to shrink properly */
+    min-width: 280px;
+  }
+
+  /* newboss section fix */
+  .newboss {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;        /* prevents overflow */
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .newboss img {
+    max-width: 100%;        /* prevent overflow */
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Ensure headings scale on tiny screens */
+  .newone h1 {
+    font-size: clamp(18px, 5vw, 32px);
+    line-height: 1.2;
+  }
+
+  /* Mobile screens under 480px */
+  @media (max-width: 480px) {
+
+    .header-inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .creditline {
+      justify-content: center;
+    }
+
+    .hero {
+      flex-direction: column;
+    }
+
+    .hero-text, .hero-panel {
+      width: 100%;
+    }
+
+    .newboss {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .newone p {
+      font-size: 14px;
+    }
+
+    .hero-text h1 {
+      font-size: 24px;
+    }
+  }
+
+  /* Extra mini phones — 360px and below */
+  @media (max-width: 360px) {
+    .hero-text h1 {
+      font-size: 20px;
+    }
+
+    .creditline {
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .header-nav {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+</style>
+
+</style>
+<body>
+  <div class="loader-container" id="globalLoader"><div class="loader" aria-hidden="true"></div></div>
+
+  <header class="site-header container header-inner">
+    <img src="../medias/image/Capital_One_logo.svg.png" alt="FinOne" class="logo" />
+
+    
+    <div class="creditline">
+        <a href="">Credit Cards</a>
+        <a href="">Credit Keeper</a>
+        <a href="">Life & Credit Blog</a>
+    </div>
+    <nav class="header-nav">
+      <a href="login.html" class="btn btn-outline">Sign in</a>
+      <a href="register.html" class="btn btn-primary">Get started</a>
+    </nav>
+  </header>
+
+  <main class="hero container">
+    <div class="hero-text card">
+      <h1>Banking made simple.</h1>
+      <p>Secure checking, savings, transfers, Zelle-style payments and more</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="register.html">Open an account</a>
+        <a class="btn btn-ghost" href="login.html">Already a customer?</a>
+      </div>
+    </div>
+
+    <div class="hero-panel card">
+      <h3>Quick glance</h3>
+      <div class="balance">
+        <div class="balance-value">Build your credit with no annual fee</div>
+        <div class="balance-meta muted">Find out if you’ll be pre-approved with no risk to your credit score.</div>
+      </div>
+      
+    </div>
+  </main>
+
+  <section class="newboss">
+    <div class="newone">
+        <h1>You’re guaranteed approval if you meet all four conditions</h1>
+        <p>You may need to provide security funds. <span class="spin"><a href="">Learn More</a></span></p>
+    </div>
+    <img src="../medias/image/capitol.png" alt="cap.png">
+
+
+  </section>
+
+  <footer class="site-footer container">
+    <small>© 2025 Capital One. All rights reserved.</small>
+  </footer>
+
+<script src="../js/loader.js"></script>
+
+
+<script>
+  // small hero shimmer effect
+  const heroBalance = document.getElementById('heroBalance');
+  let n = parseFloat(heroBalance.textContent.replace(',', ''));
+  setInterval(() => {
+    n = (n + (Math.random()-0.5)*10).toFixed(2);
+    heroBalance.textContent = parseFloat(n).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2});
+  }, 3500);
+</script>
+</body>
+</html>

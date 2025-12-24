@@ -1,0 +1,6 @@
+body.dark{
+  background:#060617;color:#e6eef8;
+}
+body.dark .card{background:#0f1724;box-shadow:0 6px 18px rgba(3,8,30,0.6)}
+body.dark .nav-item{color:#9fb0d9}
+body.dark .nav-item.active{color:#dbe9ff}

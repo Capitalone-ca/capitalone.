@@ -1,0 +1,27 @@
+.loader-container{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(10,20,40,0.12);
+  z-index:9999;
+}
+
+.loader {
+  border:6px solid #f3f6fb;
+  border-top:6px solid #0033a0;
+  border-radius:50%;
+  width:48px;
+  height:48px;
+  animation:spin 1s linear infinite;
+  box-shadow: 0 4px 10px rgba(3,51,160,0.12);
+}
+
+
+@keyframes spin{
+  0%{transform:rotate(0deg)}
+  100%{transform:rotate(360deg)}
+}
+
+.loader-text{margin-top:9px;font-size:13px;color:#0f172a}

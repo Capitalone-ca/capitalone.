@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pay Bills - CapitalOne</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/loader.css">
+</head>
+<body>
+  <div class="loader-container" id="globalLoader"><div class="loader"></div></div>
+
+<button class="floating-back-btn" onclick="goBackToDashboard()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="15 18 9 12 15 6"></polyline>
+  </svg>
+</button>
+
+  <div class="container">
+    <div class="card">
+      <h2>Pay bills</h2>
+
+      <form id="payBillsForm" class="form">
+        <label>Bill to pay
+          <select id="billSelect">
+            <option>Electric Company</option>
+            <option>Internet Provider</option>
+            <option>Credit Card</option>
+          </select>
+        </label>
+        <label>Amount
+          <input id="billAmount" type="number" required placeholder="75.00">
+        </label>
+
+        <button class="btn btn-primary" type="submit">Pay bill</button>
+      </form>
+    </div>
+  </div>
+
+<script src="../js/loader.js"></script>
+<script>
+  document.getElementById('payBillsForm').addEventListener('submit', e => {
+    e.preventDefault();
+    showLoader();
+    setTimeout(() => {
+      hideLoader();
+      alert('Bill paid (demo).');
+    }, 1400);
+  });
+</script>
+
+<script>
+function goBackToDashboard() {
+  window.location.href = "dashboard.html";
+}
+</script>
+</body>
+</html>
