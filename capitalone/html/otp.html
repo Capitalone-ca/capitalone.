@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OTP Verification — CapitalOne</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/loader.css">
+</head>
+<body>
+  <div class="loader-container" id="globalLoader"><div class="loader"></div></div>
+
+  <button class="floating-back-btn" onclick="goBackToDashboard()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="15 18 9 12 15 6"></polyline>
+  </svg>
+</button>
+
+  <div class="container">
+    <div class="card auth-card">
+      <h2>Enter OTP</h2>
+      <p>We sent a one-time passcode to your phone +1 (210)-530-5632.</p>
+
+      <form id="otpForm" class="form">
+        <label>
+          <input id="otpInput" type="text" inputmode="numeric" pattern="\d*" maxlength="6">
+        </label>
+        <button class="btn btn-primary" type="submit">Verify</button>
+      </form>
+
+      <p class="muted">Didn't get it? <button id="resendOtp" class="linklike">Resend OTP</button></p>
+    </div>
+  </div>
+
+<script src="../js/loader.js"></script>
+<script src="../js/otp.js"></script>
+
+<script>
+function goBackToDashboard() {
+  window.location.href = "dashboard.html";
+}
+</script>
+</body>
+</html>

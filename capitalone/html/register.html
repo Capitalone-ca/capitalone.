@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Create account — CapitalOne</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/loader.css">
+  
+</head>
+<body>
+  <div class="loader-container" id="globalLoader"><div class="loader"></div></div>
+
+  <div class="auth-page container">
+    <div class="auth-card card">
+      <img src="../medias/image/Capital_One_logo.svg.png" alt="logo" class="logo-sm">
+      <h2>Create account</h2>
+
+      <form id="registerForm" class="form">
+        <label>Full name
+          <input id="regName" type="text" required placeholder="">
+        </label>
+        <label>Email
+          <input id="regEmail" type="email" required placeholder="">
+        </label>
+        <label>Password
+          <input id="regPassword" type="password" required minlength="6" placeholder="Create password">
+        </label>
+
+        <button type="submit" class="btn btn-primary">Create account</button>
+      </form>
+
+      <p class="muted">Already registered? <a href="login.html">Sign in</a></p>
+    </div>
+  </div>
+
+ <!-- Firebase compat SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<!-- Your Firebase config -->
+<script src="../js/firebase-config.js"></script>
+
+<!-- Loader -->
+<script src="../js/loader.js"></script>
+
+<!-- Auth logic -->
+<script src="../js/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sign in — CapitalOne</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/loader.css">
+  
+</head>
+<body>
+  <div class="loader-container" id="globalLoader"><div class="loader"></div></div>
+
+  <div class="auth-page container">
+    <div class="auth-card card">
+      <img src="../medias/image/Capital_One_logo.svg.png" alt="logo" class="logo-sm">
+      <h2>Sign in</h2>
+
+      <form id="loginForm" class="form">
+        <label>Email
+          <input id="loginEmail" type="email" required placeholder="Email">
+        </label>
+        <label>Password
+          <input id="loginPassword" type="password" required placeholder="••••••••">
+
+        </label>
+
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+
+      <div class="or">or</div>
+
+      <!-- <div class="social-row">
+        <button id="googleSign" class="btn btn-outline">Continue with Google</button>
+      </div> -->
+
+      <p class="muted">Don't have an account? <a href="register.html">Create one</a></p>
+    </div>
+  </div>
+
+<!-- Firebase compat SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<!-- Your Firebase config -->
+<script src="../js/firebase-config.js"></script>
+
+<!-- Loader -->
+<script src="../js/loader.js"></script>
+
+<!-- Auth logic -->
+<script src="../js/auth.js"></script>
+
+
+
+</body>
+</html>

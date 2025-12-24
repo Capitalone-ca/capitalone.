@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Add Bank — CapitalOne</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/loader.css">
+</head>
+<body>
+  <div class="loader-container" id="globalLoader"><div class="loader"></div></div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Add external bank</h2>
+      <form id="addBankForm" class="form">
+        <label>Routing number
+          <input id="routing" pattern="\d{9}" inputmode="numeric" required placeholder="012345678">
+        </label>
+        <label>Account number
+          <input id="acctNum" type="text" required placeholder="1234567890">
+        </label>
+        <label>Account nickname
+          <input id="acctNick" type="text" placeholder="My external bank">
+        </label>
+
+        <button type="submit" class="btn btn-primary">Link account</button>
+      </form>
+    </div>
+  </div>
+
+<script src="../js/loader.js"></script>
+<script>
+  document.getElementById('addBankForm').addEventListener('submit', e => {
+    e.preventDefault();
+    showLoader();
+    setTimeout(() => {
+      hideLoader();
+      alert('Failed Account on Liquidation.');
+      window.location.href = 'accounts.html';
+    }, 1500);
+  });
+</script>
+</body>
+</html>
