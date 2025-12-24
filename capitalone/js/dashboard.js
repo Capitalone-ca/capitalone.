@@ -2,7 +2,7 @@
 
 (function () {
 
-  const INACTIVITY_LIMIT = 5 * 60 * 1000; // 5 minutes
+  const INACTIVITY_LIMIT = 3 * 60 * 1000; // 5 minutes
   let inactivityTimer;
   let expired = false;
 
