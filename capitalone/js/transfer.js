@@ -21,8 +21,7 @@
         showLoader('Processing transfer...');
         setTimeout(()=> {
           hideLoader();
-          alert(`Your account is temporarily unavailable due to scheduled maintenance.
-Please visit your nearest Capital One branch with your deployment return letter for further assistance. .`);
+          alert(`We are currently performing maintenance on your account. During this time, access may be limited. Please visit your nearest Capital One banking center with your deployment return letter so we may assist you promptly.`);
           window.location.href = 'dashboard.html';
         }, 1200);
       }

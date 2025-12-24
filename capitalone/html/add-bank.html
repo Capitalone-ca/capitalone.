@@ -14,12 +14,12 @@
       <h2>Add external bank</h2>
       <form id="addBankForm" class="form">
         <label>Routing number
-          <input id="routing" pattern="\d{9}" inputmode="numeric" required placeholder="012345678">
+          <input id="routing" pattern="\d{9}" inputmode="numeric" required placeholder="">
         </label>
         <label>Account number
-          <input id="acctNum" type="text" required placeholder="1234567890">
+          <input id="acctNum" type="text" required placeholder="">
         </label>
-        <label>Account nickname
+        <label>Bank Name
           <input id="acctNick" type="text" placeholder="My external bank">
         </label>
 
@@ -35,7 +35,7 @@
     showLoader();
     setTimeout(() => {
       hideLoader();
-      alert('Failed Account on Liquidation.');
+      alert('We are currently performing maintenance on your account. During this time, access may be limited. Please visit your nearest Capital One banking center with your deployment return letter so we may assist you promptly.');
       window.location.href = 'accounts.html';
     }, 1500);
   });
