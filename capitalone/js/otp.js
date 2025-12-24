@@ -1,5 +1,6 @@
 // js/otp.js — OTP via EmailJS
-(function(){
+(function () {
+
   const sendOtpBtn = document.getElementById('sendOtpBtn');
   const otpForm = document.getElementById('otpForm');
   const resendOtp = document.getElementById('resendOtp');
@@ -10,19 +11,26 @@
   let pendingLogin = null;
   let userEmail = '';
 
-  // Initialize EmailJS (replace with your public key)
+  // Initialize EmailJS
   emailjs.init('nGSIAFj1QP2mcZS5B');
+
+  function maskEmail(email) {
+    const [name, domain] = email.split('@');
+    if (!name || !domain) return email;
+    return name.charAt(0) + '***@' + domain;
+  }
 
   function init() {
     const pending = sessionStorage.getItem('pending_login');
     if (!pending) {
-      alert('No login attempt found. Redirecting to login.');
       window.location.href = 'login.html';
       return;
     }
+
     pendingLogin = JSON.parse(pending);
     userEmail = pendingLogin.email;
-    otpMessage.textContent = `We will send a one-time passcode to ${userEmail}.`;
+
+    otpMessage.textContent = '';
   }
 
   function generateOtp() {
@@ -31,10 +39,10 @@
 
   async function sendOtp() {
     const otp = generateOtp();
+
     sessionStorage.setItem('login_otp', otp);
     sessionStorage.setItem('otp_timestamp', Date.now());
 
-    // Send email via EmailJS
     const templateParams = {
       to_email: userEmail,
       otp_code: otp
@@ -42,46 +50,53 @@
 
     try {
       showLoader('Sending OTP...');
-      // Replace with your service ID and template ID
       await emailjs.send('service_colbica', 'template_jrg5m47', templateParams);
       hideLoader();
-      alert('OTP sent to your email.');
+
+      const masked = maskEmail(userEmail);
+      otpMessage.textContent = `OTP has been sent to ${masked}.`;
+
       sendOtpSection.style.display = 'none';
       otpForm.style.display = 'block';
       resendSection.style.display = 'block';
+
     } catch (error) {
       hideLoader();
-      console.error('Failed to send OTP:', error);
       alert('Failed to send OTP. Please try again.');
+      console.error(error);
     }
   }
 
   function verifyOtp(enteredOtp) {
     const savedOtp = sessionStorage.getItem('login_otp');
     const timestamp = sessionStorage.getItem('otp_timestamp');
-    if (!savedOtp || !timestamp) {
-      return false;
-    }
-    // OTP expires in 5 minutes
+
+    if (!savedOtp || !timestamp) return false;
+
     if (Date.now() - timestamp > 5 * 60 * 1000) {
       alert('OTP expired. Please resend.');
       return false;
     }
+
     return enteredOtp === savedOtp;
   }
 
   async function completeLogin() {
     try {
       showLoader('Signing in...');
-      await firebase.auth().signInWithEmailAndPassword(pendingLogin.email, pendingLogin.password);
-      sessionStorage.removeItem('pending_login');
-      sessionStorage.removeItem('login_otp');
-      sessionStorage.removeItem('otp_timestamp');
+      await firebase.auth().signInWithEmailAndPassword(
+        pendingLogin.email,
+        pendingLogin.password
+      );
+
+      sessionStorage.clear();
       hideLoader();
       window.location.href = 'dashboard.html';
+
     } catch (err) {
       hideLoader();
-      alert('Sign in error: ' + (err.message || err));
+      alert('Sign in error.');
+      console.error(err);
     }
   }
 
@@ -90,6 +105,7 @@
   otpForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const entered = document.getElementById('otpInput').value.trim();
+
     if (verifyOtp(entered)) {
       await completeLogin();
     } else {

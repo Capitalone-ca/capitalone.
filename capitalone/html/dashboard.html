@@ -494,22 +494,7 @@ if (nameEl) nameEl.textContent = displayName;
     })();
 
     // preserve your auto logout timer (8 minutes)
-    let logoutTimer;
-    function resetTimer() {
-      clearTimeout(logoutTimer);
-      logoutTimer = setTimeout(() => {
-        if(window.firebase && firebase.auth){
-          firebase.auth().signOut().then(() => {
-            alert("Session expired. You have been logged out.");
-            window.location.href = "index.html";
-          });
-        } else {
-          window.location.href = "index.html";
-        }
-      }, 480000); // 8 minutes
-    }
-    ["click","mousemove","keydown","scroll","touchstart"].forEach(evt => document.addEventListener(evt, resetTimer));
-    resetTimer();
+    
   </script>
 
 </body>
