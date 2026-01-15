@@ -5,12 +5,27 @@ const mockHistory = [
   { date: "2025-11-16", desc: "Starbucks Coffee", type: "Debit", amount: -7.85, balance: 6660.26 },
   { date: "2025-11-14", desc: "Transfer to Savings", type: "Debit", amount: -500.00, balance: 6668.11 },
   { date: "2025-11-06", desc: "Walmart Supercenter", type: "Debit", amount: -89.20, balance: 7168.11 },
-  { date: "2025-11-02", desc: "Paycheck Deposit", type: "Credit", amount: 2100.00, balance: 7257.31 },
+  { date: "2025-11-02", desc: "Paycheck Deposit", type: "Credit", amount: 6100.00, balance: 7257.31 },
   { date: "2025-10-23", desc: "Amazon Marketplace", type: "Debit", amount: -39.99, balance: 5157.31 },
   { date: "2025-10-20", desc: "Apple Subscription", type: "Debit", amount: -14.99, balance: 5197.30 },
   { date: "2025-10-13", desc: "ATM Deposit", type: "Credit", amount: 300.00, balance: 5212.29 },
   { date: "2025-10-05", desc: "Target Store", type: "Debit", amount: -120.49, balance: 4912.29 },
-  { date: "2025-10-02", desc: "Zelle to Sarah W.", type: "Debit", amount: -150.00, balance: 5032.78 }
+  { date: "2025-10-02", desc: "Zelle to Sarah W.", type: "Debit", amount: -150.00, balance: 5032.78 },
+  { date: "2025-09-28", desc: "Shell Gas Station", type: "Debit", amount: -55.00, balance: 5182.78 },
+  { date: "2025-09-25", desc: "CVS Pharmacy", type: "Debit", amount: -32.45, balance: 5237.78 },
+  { date: "2025-09-18", desc: "Paycheck Deposit", type: "Credit", amount: 6100.00, balance: 5270.23 },
+  { date: "2025-09-14", desc: "Netflix Subscription", type: "Debit", amount: -15.99, balance: 3170.23 },
+  { date: "2025-09-10", desc: "Whole Foods Market", type: "Debit", amount: -87.60, balance: 3186.22 },
+  { date: "2025-09-05", desc: "Transfer from Checking", type: "Credit", amount: 500.00, balance: 3273.82 },
+  { date: "2025-08-29", desc: "Best Buy Electronics", type: "Debit", amount: -249.99, balance: 2773.82 },
+  { date: "2025-08-25", desc: "Zelle from Jessica K.", type: "Credit", amount: 75.00, balance: 3023.81 },
+  { date: "2025-08-20", desc: "Uber Ride", type: "Debit", amount: -18.50, balance: 2948.81 },
+  { date: "2025-08-15", desc: "Paycheck Deposit", type: "Credit", amount: 6100.00, balance: 2967.31 },
+  { date: "2025-08-10", desc: "Electric Company", type: "Debit", amount: -125.75, balance: 867.31 },
+  { date: "2025-08-05", desc: "Bank ATM Withdrawal", type: "Debit", amount: -200.00, balance: 993.06 },
+  { date: "2025-07-30", desc: "Panera Bread", type: "Debit", amount: -12.35, balance: 1193.06 },
+  { date: "2025-07-25", desc: "Home Depot", type: "Debit", amount: -156.80, balance: 1205.41 },
+  { date: "2025-07-20", desc: "Paycheck Deposit", type: "Credit", amount: 6100.00, balance: 1362.21 }
 ];
 
 // Render into table
