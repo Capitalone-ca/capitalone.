@@ -1,6 +1,8 @@
 // js/transactions.js — mock transactions data + rendering into transactions.html
 const mockHistory = [
-  { date: "2026-01-01", desc: "DFAS-CL MILITARY PAY 01/01<br><small>DEPT OF DEFENSE PAY</small>", type: "Credit", amount: 10150.00, balance: 17660.26 },
+  // { date: "2026-01-01", desc: "DFAS-CL MILITARY PAY 01/01<br><small>DEPT OF DEFENSE PAY</small>", type: "Credit", amount: 10150.00, balance: 17660.26 },
+
+  { date: "2026-01-01", desc: "Brokerage", type: "credit", amount: 5000.00},
   { date: "2025-11-20", desc: "Zelle from Michael Adams", type: "Credit", amount: 850.00, balance: 7510.26 },
   { date: "2025-11-16", desc: "Starbucks Coffee", type: "Debit", amount: -7.85, balance: 6660.26 },
   { date: "2025-11-14", desc: "Transfer to Savings", type: "Debit", amount: -500.00, balance: 6668.11 },
