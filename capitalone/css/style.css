@@ -97,6 +97,11 @@ body
 .auth-card{max-width:420px;width:100%;text-align:center}
 .auth-card .logo-sm{margin-bottom:6px}
 
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
 .grid-2 {
   grid-template-columns: repeat(2, 1fr);
 }
