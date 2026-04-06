@@ -58,7 +58,8 @@
     .co-cc .label { font-size:12px; opacity:0.95; text-align:right; }
 
     .co-savor { background: linear-gradient(180deg,#c94b44,#b03628); }
-    .co-venture { background: linear-gradient(180deg,#0b3a53,#042033); }
+    .co-investment { background: linear-gradient(180deg,#1d567a,#0b304f); }
+    .co-venture { background: linear-gradient(180deg,#c94b44,#b03628); }
 
     .virtual-btn { border:1px solid rgba(255,255,255,0.18); background:transparent; color:#fff; padding:8px 10px; border-radius:8px; font-weight:600; font-size:13px; }
 
@@ -232,6 +233,20 @@
             </div>
           </div>
 
+          <!-- investment card -->
+          <div class="co-cc co-investment card" role="article" aria-label="Investment card">
+            <div class="left">
+              <div class="brand">INVESTMENT <span style="font-weight:500;opacity:0.9">_3345</span></div>
+              <div class="last">Investment account</div>
+            </div>
+            <div>
+              <div class="amount">$500,140.71</div>
+              <div class="label">Investment balance</div>
+              <div style="height:8px"></div>
+              <button class="virtual-btn" onclick="onVirtualCard('investment')">View investment</button>
+            </div>
+          </div>
+
           <!-- Venture card -->
           <div class="co-cc co-venture card" role="article" aria-label="Venture card">
             <div class="left">
@@ -239,7 +254,7 @@
               <div class="last">Get your virtual card</div>
             </div>
             <div>
-              <div class="amount">$69,443.92</div>
+              <div class="amount">$200,443.92</div>
               <div class="label">Current balance</div>
               <div style="height:8px"></div>
               <button class="virtual-btn" onclick="onVirtualCard('venture')">Get your virtual card</button>
